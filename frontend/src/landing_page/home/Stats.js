@@ -8,7 +8,7 @@ function Stats() {
           <h1 className="fs-2 mb-5">Trust with confidence</h1>
           <h2 className="fs-4">Customer-first always</h2>
           <p className="text-muted">
-            That's why 1.3+ crore customers trust Zerodha with ₹3.5+ lakh crores
+            That's why 1.3+ crore customers trust TradeLense with ₹3.5+ lakh crores
             worth of equity investments.
           </p>
           <h2 className="fs-4">No spam or gimmicks</h2>
