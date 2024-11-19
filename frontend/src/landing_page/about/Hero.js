@@ -24,7 +24,7 @@ function Hero() {
           <p>
             Today, our disruptive pricing models and in-house technology have
             made us the biggest stock broker in India.
-          </p>{" "}
+          </p>
           <p>
             Over 1+ Crore clients place millions of orders every day through our
             powerful ecosystem of investment platforms, contributing over 15% of
