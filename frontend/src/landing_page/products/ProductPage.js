@@ -47,6 +47,13 @@ function ProductPage() {
         googlePlay=""
         appStore=""
       />
+      <p className="text-center mt-5 fs-5 ">
+        Want to know about our technology stack? Check out the{" "}
+        <a href="" className="text-decoration-none">
+          TradeLense.tech
+        </a>{" "}
+        blog
+      </p>
       <Universe />
     </>
   );
