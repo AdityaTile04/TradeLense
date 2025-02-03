@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const holdingSchema = require("../schemas/HoldingSchema");
+const holdingSchema = require("../schemas/holdingSchema");
 
 const HoldingsModel = mongoose.model("Holdings", holdingSchema);
 

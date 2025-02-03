@@ -126,11 +126,11 @@ app.get("/addHoldings", (req, res) => {
       qty: item.qty,
       avg: item.avg,
       price: item.price,
-      net: item.price,
+      net: item.net,
       day: item.day,
     });
 
-    newHolding.save().then((res) => console.log("data addad" + res));
+    newHolding.save().then((result) => console.log("data added" + result));
   });
 });
 
