@@ -2,11 +2,16 @@ const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
 const PORT = process.env.PORT || 3000;
+const bodyParser = require("body-parser");
+const cors = require("cors");
 
 const HoldingsModel = require("./model/holding.model");
 const Position = require("./model/position.model");
 
 const app = express();
+
+app.use(cors());
+app.use(bodyParser.json());
 
 app.get("/allHoldings", async (req, res) => {
   let allHoldings = await HoldingsModel.find({});
