@@ -8,6 +8,11 @@ const Position = require("./model/position.model");
 
 const app = express();
 
+app.get("/allHoldings", async (req, res) => {
+  let allHoldings = await HoldingsModel.find({});
+  res.json(allHoldings);
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running port ${PORT}`);
 });
