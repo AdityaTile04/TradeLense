@@ -13,6 +13,11 @@ app.get("/allHoldings", async (req, res) => {
   res.json(allHoldings);
 });
 
+app.get("/allPositions", async (req, res) => {
+  let allPositions = await Position.find({});
+  res.json(allPositions);
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running port ${PORT}`);
 });
