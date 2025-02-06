@@ -7,6 +7,7 @@ const cors = require("cors");
 
 const HoldingsModel = require("./model/holding.model");
 const Position = require("./model/position.model");
+const Order = require("./model/order.model");
 
 const app = express();
 
@@ -21,6 +22,18 @@ app.get("/allHoldings", async (req, res) => {
 app.get("/allPositions", async (req, res) => {
   let allPositions = await Position.find({});
   res.json(allPositions);
+});
+
+app.post("/newOrder", async (req, res) => {
+  let newOrder = new Order({
+    name: req.body.name,
+    qty: req.body.qty,
+    price: req.body.price,
+    mode: req.body.mode,
+  });
+  newOrder.save();
+
+  res.send("order saved!");
 });
 
 app.listen(PORT, () => {
