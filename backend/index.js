@@ -12,6 +12,7 @@ const User = require("./model/user.model");
 const { createSecretToken } = require("./utils/SecretToken");
 const cookieParser = require("cookie-parser");
 const bcrypt = require("bcrypt");
+const { userVerification } = require("./middleware/AuthMiddleware");
 
 const app = express();
 
@@ -40,6 +41,8 @@ app.post("/newOrder", async (req, res) => {
 
   res.send("order saved!");
 });
+
+app.post("/", userVerification);
 
 app.post("/signup", async (req, res, next) => {
   try {
