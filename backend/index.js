@@ -8,11 +8,15 @@ const cors = require("cors");
 const HoldingsModel = require("./model/holding.model");
 const Position = require("./model/position.model");
 const Order = require("./model/order.model");
+const User = require("./model/user.model");
+const { createSecretToken } = require("./utils/SecretToken");
+const cookieParser = require("cookie-parser");
 
 const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
+app.use(cookieParser());
 
 app.get("/allHoldings", async (req, res) => {
   let allHoldings = await HoldingsModel.find({});
@@ -34,6 +38,27 @@ app.post("/newOrder", async (req, res) => {
   newOrder.save();
 
   res.send("order saved!");
+});
+
+app.post("/signup", async (req, res, next) => {
+  try {
+    const { username, email, password, createdAt } = req.body;
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.json({ message: "User already exists" });
+    }
+    const user = await User.create({ username, email, password, createdAt });
+    const token = createSecretToken(user._id);
+    res.cookie("token", token, {
+      withCredentials: true,
+      httpOnly: false,
+    });
+    res
+      .status(201)
+      .json({ message: "User signed in successfully", success: true, user });
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 app.listen(PORT, () => {
