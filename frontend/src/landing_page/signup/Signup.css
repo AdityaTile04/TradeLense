@@ -1,0 +1,90 @@
+/* Signup Form Styling */
+body {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Form Container */
+.form_container {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 30px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  text-align: center;
+}
+
+/* Heading */
+.form_container h2 {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+/* Input Fields */
+.form_container input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 16px;
+}
+
+.form_container input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Labels */
+.form_container label {
+  color: white;
+  font-size: 14px;
+  display: block;
+  text-align: left;
+  margin-top: 10px;
+}
+
+/* Submit Button */
+.form_container button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  margin-top: 15px;
+  background: #00c6ff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.form_container button:hover {
+  background: #0072ff;
+}
+
+/* Login Link */
+.form_container span {
+  display: block;
+  margin-top: 10px;
+  color: white;
+  font-size: 14px;
+}
+
+.form_container a {
+  color: #ffdd57;
+  text-decoration: none;
+}
+
+.form_container a:hover {
+  text-decoration: underline;
+}
